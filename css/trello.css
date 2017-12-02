@@ -1,0 +1,221 @@
+html {
+  background-color: #0079BF;
+}
+
+body, button, html, input, select, textarea {
+  color: #4d4d4d;
+  font: 14px "Helvetica Neue",Helvetica,sans-serif;
+  line-height: 20px;
+}
+.logo{
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAeCAMAAACMnWmDAAACOlBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9Oi5STAAAAvXRSTlMAHOMEArYG5/j3CvsDDPb6KNv+JAGqjbH9/Mx79PNK4SnNX4M9xjdd+WCYFNKhy1YYtX9ZkdzxQ3XQSQ5zIBvqKjC45cUsHqmcDXRhEbymD6JaZegFTKyllZnYeIDaI/Xe68fp0zziCXInJS5Fl+2CiNQdIu6EjESLwHarVGbROKTCyXlizrKabyGoE7TshY4ZuVh+T2RVGvJ3o8o/sCtXRr4m4FsQQq0Iv9Xfa9Y0uzbXkjGTY0c7OcgXQTLmT9zPAAACwElEQVR4Xu3URW9cSRRA4dPudpOZOUZmhjDzBJkZJjzMzMzMzMxw/tvotWwpT5amFWk2I+Xb3N1Z1K0qrsI19x2pac+H9ROpA/wnmtUIi6q1lqsRW7x02WnmalNXQqU6Rci8HENy5hE4X9e5YeHlNX1JteGWOGHEajXZxNkubY4SEvTCRQK1XulxwnhF3Q9Pa9E5wjQ3ApFcHZ6ZBNaaUXLny20nNy2PELZgiQ7kM18dIQyNANw4MyNKxk0dI2onV+ruy1tRFQEua9cq8m/Q6R2wbrRlI7PQOXPGdTpQDptjZFC+xUAurE5pHWzTvGWwtFFvPpc9WFaqv8IeE70QmV9GpdZv0j7o13ujpBP6LAw1qlZFswZv15XAmHYP9dfoMa3vuEv3UFytbTClp9Kka7XnoNa/XrT91n8Lxo/qTuAOffSiGUXv36Z5H/Kk3g8FR/VueE7boxUGjteFQ+GlvKhfxWBjnoHmewp14dmLWsf1pSZfgyl9AIqLTJXxoPaMFpOhoeszrLMr8SGgRbV+W/nD+siicX0MenQvRHN0PizXA8QnLCyYu5RZBDbn6RNAlbqvGEp09IhWxHiq0Joy2KrT0KTPpBnUXWQJDuo0UJDSkufhpHYl9IU4O/ZqBfCFboWXtBXadTBbsF8vAa/q4UPAGwbejLP4LfVtgoM8Hod39F3e04Y0EF5GOBhbopPAB7oe4IyaOgOTCfUj+LhBx4iu1cL8T1bopblvORzs0JoCaNHtUYBPtaSJaGu16md0l6qd+RVq4edbtLGAWTgHwIieAE7pGIF4o4nzG77Uwxd01/5M9+thndBvNPlt1u/rgn4HjOv3ZEw2GDjWdPoH1WRrkeq+yI9qamf2D3bVgJXATyd+ZsbqyoTjv8Sgd3fSg7/x+x9a9Sf8tWb332QHQ+WEwToyWHAoBhDp5f/gmn8Ard3CvkoCRlIAAAAASUVORK5CYII=);
+  width: 80px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.newitem-title-wrapper {
+  margin: 4px 10px;
+}
+
+#trello-list-title-input {
+  width: 100%;
+  height: 22px;
+  margin-bottom: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.list {
+  background: #ccc;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 270px;
+  -ms-flex: 0 0 270px;
+  flex: 0 0 270px;
+  margin: 0 5px;
+  max-height: 100%;
+  position: relative;
+  width: 270px;
+  max-width: 270px;
+  cursor: pointer;
+}
+
+.list-title {
+  min-height: 19px;
+  padding: 8px 34px 8px 10px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.list-cards {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 4px;
+  padding: 0 4px;
+}
+.card-title{
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-weight: 700;
+  margin: -3px -5px;
+  height: 18px;
+  min-height: 18px;
+  padding: 3px 5px;
+  resize: none;
+  max-height: 256px;
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 24px;
+}
+.trello-new-card-title-input {
+  width: 100%;
+  margin-bottom: 4px;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+  height: 54px;
+  border: none;
+  box-shadow: none;
+}
+
+.card {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  overflow: auto;
+  padding: 6px 8px 4px;
+}
+
+.card div {
+  margin-bottom: 5px;
+}
+
+#card-edit {
+  display: none;
+  position: absolute;
+  width: 600px;
+  z-index: 15;
+  top: 50px;
+  left: 50%;
+  margin: 0px 0 0 -300px;
+  padding: 50px;
+  border-radius: 3px;
+  background-color: #ccc;
+}
+
+#card-edit div {
+  margin-bottom: 10px;
+}
+
+#card-edit label {
+  display: inline-block;
+  width: 100px;
+  margin-right: 20px;
+}
+
+#card-edit-inputs input {
+  width: 300px;
+}
+
+#card-edit-close {
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+
+#container-main {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 10;
+}
+
+.navigation-bar{
+  background: #026aa7;
+  color: white;
+  font-family: "Times New Roman", Georgia, Serif;
+  line-height: 60px;
+  padding: 10px;
+  font-size: 50px;
+  text-align: center;
+  overflow: hidden;
+  padding: 5px;
+  z-index: 10;
+}
+
+#card-edit-close img {
+  width: 20px;
+  height: 20px;
+}
+
+#card-edit-delete {
+  float: left;
+  width: 70px;
+  background-color: #7B1401;
+  color: #fff;
+}
+
+#card-edit-submit {
+  float: right;
+  width: 70px;
+  background-color: #5AA3F2;
+  color: #fff;
+}
+
+#trello-title-board {
+  padding: 10px 8px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #f6f6f6;
+  font-weight: bold;
+}
+
+#trello-canvas-board {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
