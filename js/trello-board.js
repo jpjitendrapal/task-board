@@ -2,10 +2,8 @@
 (function () {
 	'use strict'
 	var currentBoard;
-	/*
-	 This function will add the Card in the list
-	 */
 
+	//This function will add the Card in the list
 	function addCardTrello(list) {
 		return function () {
 			var titleTextarea = list.titleFormNode.getElementsByClassName('trello-new-card-title-input')[0];
@@ -128,17 +126,17 @@
 					return
 				}
 
-				source.list.cardsNode.removeChild(source.card.node)
-				target.list.cardsNode.insertBefore(source.card.node, target.card.node)
+				source.list.cardsNode.removeChild(source.card.node);  // removing card from source
+				target.list.cardsNode.insertBefore(source.card.node, target.card.node); // adding card in target
 
-				board.reregisterSubsequent(source.list, source.index + 1, -1)
-				source.list.cards.splice(source.index, 1)
+				board.reregisterSubsequent(source.list, source.index + 1, -1); // re register cards in source
+				source.list.cards.splice(source.index, 1); // remove from source array
 
-				board.reregisterSubsequent(target.list, target.index + 1, 1)
-				target.list.cards.splice(target.index + 1, 0, source.card)
+				board.reregisterSubsequent(target.list, target.index + 1, 1); // re register cards on target
+				target.list.cards.splice(target.index + 1, 0, source.card); // adding source crad in target cards array
 
-				source.card.list = target.list
-				board.registerCard(source.card, target.index + 1)
+				source.card.list = target.list; // updating current list with the target
+				board.registerCard(source.card, target.index + 1); // register the card
 				evt.preventDefault()
 			}
 		}(list.board));
@@ -170,13 +168,7 @@
 			};
 		})(this);
 
-		this.node.onblur = (function(card){
-			return function(){
-				card.editNode.style.display = 'none';
-				card.titleNode.style.display = 'block';
-			};
-		})(this);
-
+	
 		// this function will be called once you click on the text to edit
 		this.node.onclick = (function (card) {
 			return function () {
