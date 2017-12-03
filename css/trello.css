@@ -94,7 +94,7 @@ body, button, html, input, select, textarea {
   word-wrap: break-word;
   resize: none;
   height: 54px;
-  border: none;
+  border: 1px solid #ccc;;
   box-shadow: none;
 }
 
@@ -109,6 +109,9 @@ body, button, html, input, select, textarea {
   position: relative;
   overflow: auto;
   padding: 6px 8px 4px;
+}
+.card-update{
+  margin: 0 5px;
 }
 
 .card div {
