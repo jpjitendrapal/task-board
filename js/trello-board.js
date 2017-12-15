@@ -13,7 +13,6 @@
 		return function () {
 			var titleTextarea = list.titleFormNode.getElementsByClassName('trello-new-card-title-input')[0];
 			list.titleFormNode.getElementsByClassName('trello-new-card-title-submit')[0].onclick = titleSubmit;
-			// list.titleFormNode.getElementsByClassName('trello-card-update')[0].onclick = titleUpdate;
 			list.titleFormNode.style.display = 'block';
 			titleTextarea.focus();
 
@@ -170,9 +169,10 @@
 				'<input class="trello-new-card-title-submit" type="submit" value="Add">' +
 				'</div>'
 			node.style.display = 'none'
-			return node
+			return node;
 		}
 
+		// if this is not dummy list then create dummy card and add in the list
 		if (!dummyList) {
 			var dummyCard = new Card(this, 'Add new card...', 0);
 
@@ -184,25 +184,25 @@
 			this.titleFormNode = buildCardTitleForm()
 
 			for (var i = 0; i < this.cards.length; ++i) {
-				this.cardsNode.appendChild(this.cards[i].node)
+				this.cardsNode.appendChild(this.cards[i].node);
 			}
-			dummyCard.titleNode.onclick = addCardTrello(this)
-			this.node.appendChild(this.cardsNode)
-			dummyCard.node.appendChild(this.titleFormNode)
-			dummyCard.node.draggable = false
-			dummyCard.node.onclick = undefined
+			dummyCard.titleNode.onclick = addCardTrello(this);
+			this.node.appendChild(this.cardsNode);
+			dummyCard.node.appendChild(this.titleFormNode);
+			dummyCard.node.draggable = false;
+			dummyCard.node.onclick = undefined;
 		}
 
 		// drag-drop handlers
 		this.titleNode.ondragstart = function (evt) {
-			var index = parseInt(evt.target.getAttribute('list-index'), 10)
-			dragTracker.list = currentBoard.lists[index]
-			evt.dataTransfer.effectAllowed = 'move'
+			var index = parseInt(evt.target.getAttribute('list-index'), 10);
+			dragTracker.list = currentBoard.lists[index];
+			evt.dataTransfer.effectAllowed = 'move';
 		}
 
 		this.titleNode.ondragover = function (evt) {
 			if (dragTracker.list) {
-				evt.preventDefault()
+				evt.preventDefault();
 			}
 		}
 
@@ -214,28 +214,27 @@
 
 			if (sourceIndex === targetIndex) { return }
 
-			board.listsNode.removeChild(dragTracker.list.node)
-			board.listsNode.insertBefore(dragTracker.list.node,
-				board.lists[targetIndex].node)
+			board.listsNode.removeChild(dragTracker.list.node);
+			board.listsNode.insertBefore(dragTracker.list.node, board.lists[targetIndex].node);
 
 			for (i = sourceIndex; i < numLists - 1; ++i) {
-				board.lists[i] = board.lists[i + 1]
-				board.lists[i].titleNode.setAttribute('list-index', i)
-				board.lists[i].index = i
+				board.lists[i] = board.lists[i + 1];
+				board.lists[i].titleNode.setAttribute('list-index', i);
+				board.lists[i].index = i;
 			}
 			for (i = numLists - 1; i > targetIndex; --i) {
-				board.lists[i] = board.lists[i - 1]
-				board.lists[i].titleNode.setAttribute('list-index', i)
-				board.lists[i].index = i
+				board.lists[i] = board.lists[i - 1];
+				board.lists[i].titleNode.setAttribute('list-index', i);
+				board.lists[i].index = i;
 			}
-			board.lists[targetIndex] = dragTracker.list
-			board.lists[targetIndex].titleNode.setAttribute('list-index', targetIndex)
-			board.lists[targetIndex].index = targetIndex
-			evt.preventDefault()
+			board.lists[targetIndex] = dragTracker.list;
+			board.lists[targetIndex].titleNode.setAttribute('list-index', targetIndex);
+			board.lists[targetIndex].index = targetIndex;
+			evt.preventDefault();
 		}
 
 		this.titleNode.ondragend = function () {
-			dragTracker.list = undefined
+			dragTracker.list = undefined;
 		}
 	}
 
@@ -292,7 +291,7 @@
 		}
 
 		/*
-		This function will build the form for list,It is called by addList
+		This function will build the form for list,It is called by addList on dummy list, it is always in dummy list
 		*/
 		function buildListTitleForm() {
 			var node = document.createElement('form');

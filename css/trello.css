@@ -78,8 +78,6 @@ body, button, html, input, select, textarea {
   box-shadow: none;
   font-weight: 700;
   margin: -3px -5px;
-  height: 18px;
-  min-height: 18px;
   padding: 3px 5px;
   resize: none;
   max-height: 256px;
